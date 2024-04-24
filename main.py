@@ -2,10 +2,21 @@ from flask import Flask, request, redirect, render_template, url_for, send_from_
 from flask_sqlalchemy import SQLAlchemy
 import csv
 from sqlalchemy.exc import SQLAlchemyError
+import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user_info.db'
+
+# Get the absolute path to the directory of the current file
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+# Set the path to the SQLite database file
+db_path = os.path.join(basedir, 'user_info.db')
+
+# Configure Flask app
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + db_path
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# Initialize SQLAlchemy
 db = SQLAlchemy(app)
 
 # Database Model
@@ -60,8 +71,6 @@ def quiz():
 def loader():
     return render_template('loader.html')
 
-
-
 @app.route('/submit', methods=['POST'])
 def submit():
     try:
@@ -98,7 +107,6 @@ def submit():
         db.session.rollback()
         return str(e), 500
 
-
 @app.route('/thankyou')
 def thankyou():
     return render_template('thankyou.html')
@@ -107,7 +115,7 @@ def thankyou():
 def export_csv():
     try:
         query = User.query.all()
-        csv_path = 'users.csv'
+        csv_path = os.path.join(basedir, 'users.csv')
         with open(csv_path, mode='w', newline='') as file:
             writer = csv.writer(file)
             header = [column.name for column in User.__table__.columns]
@@ -115,7 +123,7 @@ def export_csv():
             for user in query:
                 row = [getattr(user, column) for column in header]
                 writer.writerow(row)
-        return send_from_directory(directory='.', path=csv_path, as_attachment=True)
+        return send_from_directory(directory=basedir, path='users.csv', as_attachment=True)
     except Exception as e:
         return str(e), 500
 
