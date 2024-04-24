@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/thankyou.css') }}">
+    <title>Quiz Thank You</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Thank you very much for taking the quiz!</h1>
+        <p>The quiz outcome, along with your genetic test results, will be sent to your registered email ID and WhatsApp number. 
+            Please be patient as we perform the genetic test and generate a personalized report for you.</p>
+            <a href="{{ url_for('quiz') }}" class="btn btn-primary">Back to Quiz</a>
+
+    </div>
+</body>
+</html>

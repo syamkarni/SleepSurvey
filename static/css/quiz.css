@@ -1,0 +1,219 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select,
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px;
+    border: 1px solid #464646;
+    border-radius: 4px;
+    background: transparent;
+  }
+  
+  .btn-primary {
+    background-color: rgb(31, 148, 243);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgb(27, 50, 59); 
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+  }
+  
+  /* Form section specific styling */
+  #quizQuestions {
+    display: none;
+  }
+  
+  
+  
+  /* nav bar /* 
+  
+  
+  /* Variables */
+  :root {
+    --borderRadius: 10px;
+    --spacer: 1rem;
+    --primary: #C4151C;
+    --text: #fff;
+    --linkHeight: calc(var(--spacer) * 3.5);
+    --timing: 250ms;
+    --transition: var(--timing) ease all;
+    --linkWidth: 10rem;
+  }
+  
+  /* Import Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+  
+  /* Global Styles */
+  
+  /* Header Styles */
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0, 0, 0);       /* this is to change the nav bar colour */
+    color: var(--text);
+    padding: 0 var(--spacer) * 2;
+    box-shadow: 0 0 40px rgba(153, 135, 158, 0);
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  .black-rectangle {
+    background-color: #ffffff00;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it's behind other content */
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .navbar__menu {
+    position: relative;
+    display: flex;
+  }
+  
+  .navbar__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    height: var(--linkHeight);
+    width: var(--linkWidth);
+    color: var(--text);
+    transition: var(--transition);
+    text-decoration: none;
+    width: var(--linkWidth);
+    text-transform: uppercase;
+  }
+  
+  .navbar__link svg {
+    transition: var(--transition);
+  }
+  
+  .navbar__link:hover svg {
+    stroke: var(--primary);
+  }
+  
+  .navbar__link:hover span {
+    opacity: 5;
+    transform: translate(0);
+  }
+  
+  .navbar__item:last-child:before {
+    content: '';
+    position: absolute;
+    left: -8rem;
+    margin-left: calc(var(--linkWidth) / 2);
+    bottom: -1.25rem;
+    height: 0.5rem;
+    width: 2px;
+    background: var(--primary);
+    box-shadow: 0 -0.5rem var(--primary), 0 -0.5rem var(--primary), 0 0 3rem 0.5rem rgba(255, 255, 255, 0.268), 2rem 0 0 rgba(255, 255, 255, 0.2), -3rem 0 0 rgba(255, 255, 255, 0.2), -2rem 0 0 rgba(255, 255, 255, 0.2), -1rem 0 0 rgba(255, 255, 255, 0.2), 1rem 0 0 rgba(255, 255, 255, 0.2), 2rem 0 0 rgba(255, 255, 255, 0.2), 3rem 0 0 rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+  }
+  
+  .header__logo {
+    margin-right: auto; /* Pushes the logo to the left */
+    margin-left: auto; /* Pushes the logo to the right */
+  
+  }
+  
+  .logo {
+    width: 90px; /* Change this value to adjust the width */
+    height: 70px; /* Automatically adjust height according to width */
+  }
+  
+  /* quiz button */ 
+  
+  
+  /* Centered button */
+  /* Quiz button container */
+  .quiz-button-container {
+    text-align: center;
+    margin-top: 40px; /* Adjust margin as needed */
+  }
+  
+  
+  .header__logo {
+    margin-right: auto; /* Pushes the logo to the left */
+    margin-left: auto; /* Pushes the logo to the right */
+  
+  }
+  
+  .logo {
+    width: 90px; /* Change this value to adjust the width */
+    height: 70px; /* Automatically adjust height according to width */
+  }
+  
+  /* this is for the about.html */
+  
+  
+  
+  
+  .logo {
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  .logo:hover {
+    transform: scale(1.1); /* Scale up the logo on hover */
+  }

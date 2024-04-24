@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Export to CSV from .db</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/download.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Export to CSV from .db</h1>
+    <p>Click the button below to export data as CSV:</p>
+    <button onclick="exportCSV()">Export CSV</button>
+  </div>
+
+  <script>
+    function exportCSV() {
+      window.location.href = '{{ url_for('export_csv') }}';
+    }
+  </script>
+</body>
+</html>

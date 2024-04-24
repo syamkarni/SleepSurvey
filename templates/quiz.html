@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+</head>
+<body>
+    <div class="header"> <!-- Defines a header section -->
+        <div class="header__logo">
+            <img src="{{ url_for('static', filename='svg/moon3.svg') }}" alt="Logo" class="logo"> <!-- Logo image -->
+            
+        </div>
+        <nav class="navbar"> <!-- Navigation bar -->
+            <ul class="navbar__menu"> <!-- Unordered list for menu items -->
+                <li class="navbar__item">
+                    <a href="{{ url_for('index') }}" class="navbar__link"><span>Home</span></a> <!-- Home link -->
+                </li>
+                <li class="navbar__item">
+                    <a href="{{ url_for('about') }}" class="navbar__link"><span>About</span></a> <!-- About link -->
+                </li>
+                <li class="navbar__item">
+                    <a href="mailto:decodeyourclockgene@gmail.com" class="navbar__link"><span>Contact</span></a> <!-- Contact link -->
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <form id="quizForm" class="mt-4" action="/submit" method="post">
+        <!-- Personal Details Section -->
+        <div id="personalDetails">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="number">Number:</label>
+                <input type="text" class="form-control" id="number" name="number" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+    
+            <button type="button" class="btn btn-primary" onclick="showQuestions()">Next</button>
+        </div>
+
+        <!-- Questions Section -->
+        <div id="quizQuestions" style="display: none;">
+            <div class="form-group">
+                <label for="question1">Question 1: Considering only your own “feeling best” rhythm, at what time would you get up if you were entirely free to plan your day?</label><br>
+                <select class="form-control" id="question1" name="question1" required>
+                    <option id="defaultOption" selected disabled>Select an option</option>
+                    <option value="5:00 am to 6:30 am">5:00 am to 6:30 am</option>
+                    <option value="6:30 am to 7:45 am">6:30 am to 7:45 am</option>
+                    <option value="7:45 am to 9:45 am">7:45 am to 9:45 am</option>
+                    <option value="9:45 am to 11:00 am">9:45 am to 11:00 am</option>
+                    <option value="11:00 am to 12:00 noon">11:00 am to 12:00 noon</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question2">Question 2: Considering only your own “feeling best” rhythm, at what time would you go to bed if you were entirely free to plan your evening?</label><br>
+                <select class="form-control" id="question2" name="question2" required>
+                    <option id="defaultOption" selected disabled>Select an option</option>
+                    <option value="8:00 pm to 9:00 pm">8:00 pm to 9:00 pm</option>
+                    <option value="9:00 pm to 10:15 pm">9:00 pm to 10:15 pm</option>
+                    <option value="10:15 pm to 12:30 am">10:15 pm to 12:30 am</option>
+                    <option value="12:30 am to 1:45 am">12:30 am to 1:45 am</option>
+                    <option value="1:45 am to 3:00 am">1:45 am to 3:00 am</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question3">Question 3: If there is a specific time at which you have to get up in the morning, to what extent are you dependent on being woken up by an alarm clock?</label><br>
+                <select class="form-control" id="question3" name="question3" required>
+                    <option id="defaultOption" selected disabled>Select an option</option>
+                    <option value="Not at all dependent">Not at all dependent</option>
+                    <option value="Slightly dependent">Slightly dependent</option>
+                    <option value="Fairly dependent">Fairly dependent</option>
+                    <option value="Very dependent">Very dependent</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question4">Question 4: Assuming adequate environmental conditions, how easy do you find getting up in the mornings?</label><br>
+                <select class="form-control" id="question4" name="question4" required>
+                    <option id="defaultOption" selected disabled>Select an option</option>
+                    <option value="Very difficult">Very difficult</option>
+                    <option value="Difficult">Difficult</option>
+                    <option value="Fairly easy">Fairly easy</option>
+                    <option value="Very easy">Very easy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question5">Question 5: How alert do you feel during the first half-hour after having woken in the mornings?</label><br>
+                <select class="form-control" id="question5" name="question5" required>
+                    <option id="defaultOption" selected disabled>Select an option</option>
+                    <option value="Not at all alert">Not at all alert</option>
+                    <option value="Slightly alert">Slightly alert</option>
+                    <option value="Fairly alert">Fairly alert</option>
+                    <option value="Very alert">Very alert</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question6">Question 6: How is your appetite during the first half-hour after having woken in the mornings?</label><br>
+                <select class="form-control" id="question6" name="question6" required>
+                    <option id="defaultOption" selected disabled>Select an option</option>
+                    <option value="Very poor">Very poor</option>
+                    <option value="Fairly poor">Fairly poor</option>
+                    <option value="Fairly good">Fairly good</option>
+                    <option value="Very good">Very good</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question7">Question 7: During the first half-hour after having woken in the morning, how tired do you feel?</label><br>
+                <select class="form-control" id="question7" name="question7" required>
+                    <option id="defaultOption" selected disabled>Select an option</option>
+                    <option value="Very tired">Very tired</option>
+                    <option value="Fairly tired">Fairly tired</option>
+                    <option value="Fairly refreshed">Fairly refreshed</option>
+                    <option value="Very refreshed">Very refreshed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question8">Question 8: When you have no commitments the next day, at what time do you go to bed compared to your usual bedtime?</label><br>
+                <select class="form-control" id="question8" name="question8" required>
+                    <option id="defaultOption" selected disabled>Select an option</option>
+                    <option value="Seldom or never later">Seldom or never later</option>
+                    <option value="Less than one hour later">Less than one hour later</option>
+                    <option value="1-2 hours later">1-2 hours later</option>
+                    <option value="More than two hours later">More than two hours later</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question9">Question 9: You have decided to engage in some physical exercise. A friend suggests that you do this one hour twice a week and the best time for him is between 7:00-8:00 a.m. Bearing in mind nothing else but your own “feeling best” rhythm, how do you think you would perform?</label><br>
+                <select class="form-control" id="question9" name="question9" required>
+                    <option id="defaultOption" selected disabled>Select an option</option>
+                    <option value="Would be on good form">Would be on good form</option>
+                    <option value="Would be on reasonable form">Would be on reasonable form</option>
+                    <option value="Would find it difficult">Would find it difficult</option>
+                    <option value="Would find it very difficult">Would find it very difficult</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question10">Question 10: At what time of the evening do you feel tired and as a result in need of sleep?</label><br>
+                <select class="form-control" id="question10" name="question10" required>
+                    <option selected disabled>Select an option</option>
+                    <option value="8:00 pm to 9:00 pm">8:00 pm to 9:00 pm</option>
+                    <option value="9:00 pm to 10:00 pm">9:00 pm to 10:00 pm</option>
+                    <option value="10:00 pm to 1:00 am">10:00 pm to 1:00 am</option>
+                    <option value="1:00 am to 2:00 am">1:00 am to 2:00 am</option>
+                    <option value="2:00 am to 3:00 am">2:00 am to 3:00 am</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question11">Question 11: You wish to be at your peak performance for a test which you know is going to be mentally exhausting and lasting for two hours. You are entirely free to plan your day and considering only your own “feeling best” rhythm, which ONE of the four testing times would you choose?</label><br>
+                <select class="form-control" id="question11" name="question11" required>
+                    <option selected disabled>Select an option</option>
+                    <option value="8:00 am to 10:00 am">8:00 am to 10:00 am</option>
+                    <option value="11:00 am to 1:00 pm">11:00 am to 1:00 pm</option>
+                    <option value="3:00 pm to 5:00 pm">3:00 pm to 5:00 pm</option>
+                    <option value="7:00 pm to 9:00 pm">7:00 pm to 9:00 pm</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question12">Question 12: If you went to bed at 11:00 pm at what level of tiredness would you be?</label><br>
+                <select class="form-control" id="question12" name="question12" required>
+                    <option selected disabled>Select an option</option>
+                    <option value="Not at all tired">Not at all tired</option>
+                    <option value="A little tired">A little tired</option>
+                    <option value="Fairly tired">Fairly tired</option>
+                    <option value="Very tired">Very tired</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question13">Question 13: For some reason you have gone to bed several hours later than usual, but there is no need to get up at any particular time the next morning. Which ONE of the following events are you most likely to experience?</label><br>
+                <select class="form-control" id="question13" name="question13" required>
+                    <option selected disabled>Select an option</option>
+                    <option value="Will wake up at usual time and will NOT fall asleep">Will wake up at usual time and will NOT fall asleep</option>
+                    <option value="Will wake up at usual time and will doze thereafter">Will wake up at usual time and will doze thereafter</option>
+                    <option value="Will wake up at usual time but will fall asleep again">Will wake up at usual time but will fall asleep again</option>
+                    <option value="Will NOT wake up until later than usual">Will NOT wake up until later than usual</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question14">Question 14: One night you have to remain awake between 4:00 am-6:00 am in order to carry out a night watch. You have no commitments the next day. Which ONE of the alternatives will suit you best?</label><br>
+                <select class="form-control" id="question14" name="question14" required>
+                    <option selected disabled>Select an option</option>
+                    <option value="Would NOT go to bed until watch was over">Would NOT go to bed until watch was over</option>
+                    <option value="Would take a nap before and sleep after">Would take a nap before and sleep after</option>
+                    <option value="Would take a good sleep before and nap after">Would take a good sleep before and nap after</option>
+                    <option value="Would take ALL sleep before watch">Would take ALL sleep before watch</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question15">Question 15: You have to do two hours of hard physical work. You are entirely free to plan your day considering only your own “feeling best” rhythm. Which ONE of the following times would you choose?</label><br>
+                <select class="form-control" id="question15" name="question15" required>
+                    <option selected disabled>Select an option</option>
+                    <option value="8:00 am to 10:00 am">8:00 am to 10:00 am</option>
+                    <option value="11:00 am to 1:00 pm">11:00 am to 1:00 pm</option>
+                    <option value="3:00 pm to 5:00 pm">3:00 pm to 5:00 pm</option>
+                    <option value="7:00 pm to 9:00 pm">7:00 pm to 9:00 pm</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="question16">Question 16: You have decided to engage in hard physical exercise. A friend suggests that you do this for one hour twice a week and the best time for him is between 10:00 pm-11:00 pm. Bearing in mind nothing else but your own “feeling best” rhythm, how well do you think you would perform?</label><br>
+                <select class="form-control" id="question16" name="question16" required>
+                    <option selected disabled>Select an option</option>
+                    <option value="Would be on good form">Would be on good form</option>
+                    <option value="Would be on reasonable form">Would be on reasonable form</option>
+                    <option value="Would find it difficult">Would find it difficult</option>
+                    <option value="Would find it very difficult">Would find it very difficult</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="question17">Question 17: Suppose that you can choose your own work hours. Assume that you worked a FIVE hour day (including breaks) and that your job was interesting and paid by results. Which FIVE CONSECUTIVE HOURS would you select?</label><br>
+                <select class="form-control" id="question17" name="question17" required>
+                    <option selected disabled>Select an option</option>
+                    <option value="Five hours starting between 12:00 am and 3:00 am">Five hours starting between 12:00 am and 3:00 am</option>
+                    <option value="Five hours starting between 3:00 am and 7:00 am">Five hours starting between 3:00 am and 7:00 am</option>
+                    <option value="Five hours starting between 7:00 am and 9:00 am">Five hours starting between 7:00 am and 9:00 am</option>
+                    <option value="Five hours starting between 9:00 am and 1:00 pm">Five hours starting between 9:00 am and 1:00 pm</option>
+                    <option value="Five hours starting between 1:00 pm and 4:00 pm">Five hours starting between 1:00 pm and 4:00 pm</option>
+                    <option value="Five hours starting between 5:00 pm and 12:00 am">Five hours starting between 5:00 pm and 12:00 am</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="question18">Question 18: At what time of the day do you think that you reach your 'feeling best' peak?</label><br>
+                <select class="form-control" id="question18" name="question18" required>
+                    <option selected disabled>Select an option</option>
+                    <option value="12:00 am to 3:00 am">12:00 am to 3:00 am</option>
+                    <option value="3:00 am to 6:00 am">3:00 am to 6:00 am</option>
+                    <option value="6:00 am to 9:00 am">6:00 am to 9:00 am</option>
+                    <option value="9:00 am to 12:00 pm">9:00 am to 12:00 pm</option>
+                    <option value="12:00 pm to 3:00 pm">12:00 pm to 3:00 pm</option>
+                    <option value="3:00 pm to 6:00 pm">3:00 pm to 6:00 pm</option>
+                    <option value="6:00 pm to 9:00 pm">6:00 pm to 9:00 pm</option>
+                    <option value="9:00 pm to 12:00 am">9:00 pm to 12:00 am</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="question19">Question 19: At what time of the day do you think that you reach your 'feeling least' peak?</label><br>
+                <select class="form-control" id="question19" name="question19" required>
+                    <option selected disabled>Select an option</option>
+                    <option value="12:00 am to 3:00 am">12:00 am to 3:00 am</option>
+                    <option value="3:00 am to 6:00 am">3:00 am to 6:00 am</option>
+                    <option value="6:00 am to 9:00 am">6:00 am to 9:00 am</option>
+                    <option value="9:00 am to 12:00 pm">9:00 am to 12:00 pm</option>
+                    <option value="12:00 pm to 3:00 pm">12:00 pm to 3:00 pm</option>
+                    <option value="3:00 pm to 6:00 pm">3:00 pm to 6:00 pm</option>
+                    <option value="6:00 pm to 9:00 pm">6:00 pm to 9:00 pm</option>
+                    <option value="9:00 pm to 12:00 am">9:00 pm to 12:00 am</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="showPersonalDetails()">Back</button>
+        </div>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Prevent form submission on Enter key press
+            var quizForm = document.getElementById('quizForm');
+            quizForm.addEventListener('keydown', function(e) {
+                if (e.keyCode === 13) {
+                    e.preventDefault();
+                }
+            });
+
+            // Attach event listeners for showing sections
+            var btnNext = document.querySelector('.btn-next');
+            var btnBack = document.querySelector('.btn-back');
+            btnNext.addEventListener('click', showQuestions);
+            btnBack.addEventListener('click', showPersonalDetails);
+
+            // Attach event listener for form submission
+            quizForm.addEventListener('submit', function(e) {
+                if (!validateForm()) {
+                    e.preventDefault(); // Prevent form submission if validation fails
+                }
+            });
+        });
+
+        function showQuestions() {
+            document.getElementById('personalDetails').style.display = 'none';
+            document.getElementById('quizQuestions').style.display = 'block';
+        }
+
+        function showPersonalDetails() {
+            document.getElementById('quizQuestions').style.display = 'none';
+            document.getElementById('personalDetails').style.display = 'block';
+        }
+
+        function validateForm() {
+            var selects = document.querySelectorAll('#quizQuestions select');
+            for (var i = 0; i < selects.length; i++) {
+                if (selects[i].value === '') {
+                    alert('Please answer all questions before submitting.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>

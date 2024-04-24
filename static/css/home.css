@@ -1,0 +1,232 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    background-image: url('../background/blur.jpeg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+  
+  
+  body {
+    background-color: rgba(255, 255, 255, 0);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+  
+  }
+  
+  
+  
+  section {
+    background-color:  #f5b6d900; 
+    border-radius: 20px;
+    /*box-shadow: 0 2px 4px rgba(201, 199, 199, 0.1);*/
+    padding: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 20px;
+    
+    
+  }
+  
+  h2 {
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+  }
+  
+  #takeQuizButton {
+    background-color: red;
+    color: white;
+    padding: 15px 40px; /* Increase padding for larger button */
+    border: 2px solid red; /* Add border */
+    border-radius: 10px; /* Increase border radius for rounded corners */
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, border-color 0.3s; /* Add transition for border-color */
+  }
+  
+  #takeQuizButton:hover {
+    background-color: green;
+    border-color: green; /* Change border color on hover */
+  }
+  
+  #takeQuizButton:focus {
+    outline: none;
+  }
+  
+  
+  
+  
+  /* this is for nav bar */
+  :root {
+    --borderRadius: 10px;
+    --spacer: 1rem;
+    --primary: #C4151C;
+    --text: #fff;
+    --linkHeight: calc(var(--spacer) * 3.5);
+    --timing: 250ms;
+    --transition: var(--timing) ease all;
+    --linkWidth: 10rem;
+  }
+  
+  /* Import Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+  
+  /* Global Styles */
+  
+  /* Header Styles */
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0, 0, 0);       /* this is to change the nav bar colour */
+    color: var(--text);
+    padding: 0 var(--spacer) * 2;
+   /* box-shadow: 0 0 40px rgb(153, 135, 158); */
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  .black-rectangle {
+    background-color: #ffffff00;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it's behind other content */
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .navbar__menu {
+    position: relative;
+    display: flex;
+  }
+  
+  .navbar__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    height: var(--linkHeight);
+    width: var(--linkWidth);
+    color: var(--text);
+    transition: var(--transition);
+    text-decoration: none;
+    width: var(--linkWidth);
+    text-transform: uppercase;
+  }
+  
+  .navbar__link svg {
+    transition: var(--transition);
+  }
+  
+  .navbar__link:hover svg {
+    stroke: var(--primary);
+  }
+  
+  .navbar__link:hover span {
+    opacity: 5;
+    transform: translate(0);
+  }
+  
+  .navbar__item:last-child:before {
+    content: '';
+    position: absolute;
+    left: -8rem;
+    margin-left: calc(var(--linkWidth) / 2);
+    bottom: -1.25rem;
+    height: 0.5rem;
+    width: 2px;
+    background: var(--primary);
+    box-shadow: 0 -0.5rem var(--primary), 0 -0.5rem var(--primary), 0 0 3rem 0.5rem rgba(255, 255, 255, 0.268), 2rem 0 0 rgba(255, 255, 255, 0.2), -3rem 0 0 rgba(255, 255, 255, 0.2), -2rem 0 0 rgba(255, 255, 255, 0.2), -1rem 0 0 rgba(255, 255, 255, 0.2), 1rem 0 0 rgba(255, 255, 255, 0.2), 2rem 0 0 rgba(255, 255, 255, 0.2), 3rem 0 0 rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+  }
+  
+  .header__logo {
+    margin-right: auto; /* Pushes the logo to the left */
+    margin-left: auto; /* Pushes the logo to the right */
+  
+  }
+  
+  .logo {
+    width: 90px; /* Change this value to adjust the width */
+    height: 70px; /* Automatically adjust height according to width */
+  }
+  
+  /* quiz button */ 
+  
+  
+  /* Centered button */
+  /* Quiz button container */
+  .quiz-button-container {
+    text-align: center;
+    margin-top: 40px; /* Adjust margin as needed */
+  }
+  
+  .logo {
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  .logo:hover {
+    transform: scale(1.1); /* Scale up the logo on hover */
+  }
+  
+  
+  #takeQuizButton {
+    padding: 20px 40px; /* Adjust padding for button size */
+    font-size: 20px; /* Adjust font size for button text */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s; /* Add transition for border-color */
+  }
+  
+  #takeQuizButton:hover {
+    background-color: rgb(30, 67, 82);  /* Darker shade on hover */
+  }
+  
+  #takeQuizButton:focus {
+    outline: none;
+  }
+  
+  #takeQuizButton:active {
+    background-color: green !important; /* Change button color when clicked */
+  }

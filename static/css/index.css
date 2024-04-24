@@ -1,0 +1,204 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../background/og.jpeg');
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    background-color: #000000;
+  }
+  
+  .container {
+    text-align: center;
+    margin-top: 1px; /* Adjust as needed */
+  }
+  
+  h1 {
+    font-size: 80px;
+    color: #000000;
+    margin-bottom: 20px;
+    font-family: 'Nunito' , sans-serif;
+    text-align: left;
+    margin-left: 30px;
+    position: relative;
+    top: 5px;
+    left: 20px;
+  
+  }
+  
+  h2 {
+    font-size: 35px;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    font-family: 'Nunito' , sans-serif;
+  }
+  
+  
+  /* nav bar */ 
+  
+  
+  /* Variables */
+  :root {
+    --borderRadius: 10px;
+    --spacer: 1rem;
+    --primary: #C4151C;
+    --text: #ffffff;
+    --linkHeight: calc(var(--spacer) * 3.5);
+    --timing: 250ms;
+    --transition: var(--timing) ease all;
+    --linkWidth: 10rem;
+  }
+  
+  /* Import Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+  
+  /* Global Styles */
+  body {
+  
+    background-color:(0,0,255,0.5);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+  }
+  /* Header Styles */
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(30, 67, 82, 0);      
+    color: var(--text);
+    padding: 0 var(--spacer) * 2;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  .black-rectangle {
+    background-color: rgb(158, 84, 255);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .navbar__menu {
+    position: relative;
+    display: flex;
+  }
+  
+  .navbar__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    height: var(--linkHeight);
+    width: var(--linkWidth);
+    color: var(--text);
+    transition: var(--transition);
+    text-decoration: none;
+    width: var(--linkWidth);
+    text-transform: uppercase;
+  }
+  
+  .navbar__link svg {
+    transition: var(--transition);
+  }
+  
+  .navbar__link:hover svg {
+    stroke: var(--primary);
+  }
+  
+  .navbar__link:hover span {
+    opacity: 1;
+    transform: translate(0);
+  }
+  
+  .navbar__item:last-child:before {
+    content: '';
+    position: absolute;
+    left: -8rem;
+    margin-left: calc(var(--linkWidth) / 2);
+    bottom: -1.25rem;
+    height: 0.5rem;
+    width: 2px;
+    background: var(--primary);
+    box-shadow: 0 -0.5rem var(--primary), 0 -0.5rem var(--primary), 0 0 3rem 0.5rem rgba(255, 255, 255, 0.2), 2rem 0 0 rgba(255, 255, 255, 0.2), -3rem 0 0 rgba(255, 255, 255, 0.2), -2rem 0 0 rgba(255, 255, 255, 0.2), -1rem 0 0 rgba(255, 255, 255, 0.2), 1rem 0 0 rgba(255, 255, 255, 0.2), 2rem 0 0 rgba(255, 255, 255, 0.2), 3rem 0 0 rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+  }
+  
+  .header__logo {
+    margin-right: auto; /* Pushes the logo to the left */
+    margin-left: auto; /* Pushes the logo to the right */
+  
+  }
+  .quiz-button-container {
+    text-align: center;
+    margin-top: 40px; /* Adjust margin as needed */
+  }
+  .home-button-container {
+    text-align: center;
+    margin-top: 40px; /* Adjust margin as needed */
+   
+  }  
+  #takeQuizButton {
+    padding: 20px 40px; /* Adjust padding for button size */
+    font-size: 20px; /* Adjust font size for button text */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;}
+  
+  #homeButton {
+    padding: 20px 40px; /* Adjust padding for button size */
+    font-size: 20px; /* Adjust font size for button text */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;}
+  
+    #takeQuizButton:hover {
+      background-color: rgb(30, 67, 82);  /* Darker shade on hover */
+    }
+  
+    #homeButton:hover {
+      background-color: rgb(30, 67, 82);  /* Darker shade on hover */
+    }
+  
+  .logo {
+    width: 90px; /* Change this value to adjust the width */
+    height: 70px; /* Automatically adjust height according to width */
+  }
+  
+  
+  
+  .logo {
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  .logo:hover {
+    transform: scale(1.1); /* Scale up the logo on hover */
+  }

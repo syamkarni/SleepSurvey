@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Linking the external CSS file -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<!-- Setting the title of the page -->
+<title>Sleep Questions</title>
+</head>
+<body>
+    <!-- Header section -->
+    <div class="header"> 
+        <!-- Black rectangle for design -->
+        <div class="black-rectangle"></div> 
+        <!-- Logo section -->
+        <div class="header__logo">
+            <!-- Logo image -->
+            <!--<img src="/public/svg/moon3.svg" alt="Logo" class="logo">
+            <a href="index.html"><button id="indexButton">Index </button></a>-->
+
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='svg/moon3.svg') }}" alt="Logo" class="logo">
+              </a>
+        </div>
+        <!-- Navigation menu -->
+        <nav class="navbar">
+            <ul class="navbar__menu">
+                <!-- Home link -->
+                <li class="navbar__item">
+                    <a href="{{ url_for('index') }}" class="navbar__link"><span>Home</span></a>
+                </li>
+                <!-- About link -->
+                <li class="navbar__item">
+                    <a href="{{ url_for('about') }}" class="navbar__link"><span>About</span></a>        
+                </li>
+                <!-- Contact link -->
+                <li class="navbar__item">
+                    <a href="mailto:decodeyourclockgene@gmail.com" class="navbar__link"><span>Contact</span></a>        
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Sleep questions sections -->
+    <section>
+        <!-- First question -->
+        <h2>Is sleep a genetic trait?</h2>
+        <!-- Answer to the first question -->
+        <p>Yes, of course. For millions of years, humans have been subjected to 24-hour cyclic changes in light and temperature due to the Earth's rotation on its axis relative to the Sun. We evolved with thousands of genes that turn on and off in a specific order to control our physiological processes and sleep-wake cycle. These genes release melatonin at night to make you sleep and cortisol in the morning to wake you up.</p>
+    </section>
+
+    <section>
+        <!-- Second question -->
+        <h2>What is a sleep chronotype?</h2>
+        <!-- Answer to the second question -->
+        <p>Have you ever thought about why some people are at their best in the morning, at night, or somewhere in between? Ultimately, it boils down to your sleep chronotype. You may be a morning person (Lark), a night person (Owl), or a mix of the two (Bear) The Chronotype Quiz can help you discover your sleep chronotype</p>
+    </section>
+
+    <section>
+        <!-- Third question -->
+        <h2>What determines your sleep chronotype?</h2>
+        <!-- Answer to the third question -->
+        <p>We have a 24-hour biological master clock in the brain, which runs the body systems in a particular daily rhythm according to our genes and internal and external environments. The daily rhythm set by your biological clock signals you when you tend to be the most alert and when you should go to sleep.</p>
+    </section>
+
+    <section>
+        <!-- Fourth question -->
+        <h2>What should I do with my sleep chronotype?</h2>
+        <!-- Answer to the fourth question -->
+        <p>If you know your sleep chronotype, you can work with it instead of fighting against it. You become more productive and healthy when your day-to-night activities align with your sleep chronotype. It will also help you choose a team role, and make decisions about your career choice and life partner. Example: A morning person may not pick a late-night career.</p>
+    </section>
+
+    <section>
+        <!-- Fifth question -->
+        <h2>Why do we do the genetic test?</h2>
+        <!-- Answer to the fifth question -->
+        <p>Our genome contains around 30,000 genes, with two copies for each. One such gene, Period 3 (PER3), is a crucial element of the biological clock that decides our sleep-wake cycle. The number of variable number tandem repeats (VNTRs) in the PER3 gene is associated with the sleep-wake cycle.</p>
+    </section>
+
+    <!-- Button to take the quiz -->
+    <div class="quiz-button-container">
+        <!-- Link to the quiz page -->
+        <a href="{{ url_for('quiz') }}"><button id="takeQuizButton">Take Quiz</button></a>
+    </div>
+    
+
+</body>
+</html>

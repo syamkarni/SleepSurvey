@@ -1,0 +1,47 @@
+<!DOCTYPE html> <!-- Defines the document type as HTML5 -->
+<html lang="en"> <!-- Specifies the language of the document -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Declares the character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sets the viewport width to the device's width -->
+    <title>Know Your Sleep Genetics</title> <!-- Sets the title of the webpage -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}"> <!-- Links an external stylesheet for styling -->
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
+
+    <div class="header"> <!-- Defines a header section -->
+        <div class="header__logo">
+            <img src="{{ url_for('static', filename='svg/moon3.svg') }}" alt="Logo" class="logo"> <!-- Logo image -->
+            
+        </div>
+        <nav class="navbar"> <!-- Navigation bar -->
+            <ul class="navbar__menu"> <!-- Unordered list for menu items -->
+                <li class="navbar__item">
+                    <a href="{{ url_for('index') }}" class="navbar__link"><span>Home</span></a> <!-- Home link -->
+                </li>
+                <li class="navbar__item">
+                    <a href="{{ url_for('about') }}" class="navbar__link"><span>About</span></a> <!-- About link -->
+                </li>
+                <li class="navbar__item">
+                    <a href="mailto:decodeyourclockgene@gmail.com" class="navbar__link"><span>Contact</span></a> <!-- Contact link -->
+                </li>
+            </ul>
+        </nav>
+    </div>
+    
+
+    <div class="container"> <!-- Container for main content -->
+        <h1>KNOW 
+            <br> YOUR <br> SLEEP GENETICS</h1> <!-- Main heading -->
+        <h2>Your nail clippings hold the key to understand your sleep DNA. 
+            <br> A part of the journey towards better sleep</h2> <!-- Subheading -->
+    </div>
+    
+    <div class="home-button-container"> <!-- Container for the button -->
+        <a href="{{ url_for('home') }}"><button id="homeButton"> Take Quiz </button></a> <!-- Button to take the quiz -->
+    </div>
+</body>
+
+</html>

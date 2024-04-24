@@ -1,0 +1,62 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles for body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #869796;
+    background-image: url('../background/blur.jpeg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Styles for container */
+.container {
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center; /* Center align all content */
+}
+
+/* Styles for heading */
+h1 {
+    color: rgb(251, 251, 251); 
+    font-size: 50px;
+    text-align: center;
+}
+
+/* Styles for paragraph */
+p {
+    color: snow;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-weight: 300;
+    font-family: 'Nunito' , sans-serif;
+   
+}
+
+/* Styles for button */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color:#031080;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hover effect for button */
+.btn:hover {
+    background-color: #0bd429;
+}
