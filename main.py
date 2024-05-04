@@ -4,18 +4,20 @@ import csv
 from sqlalchemy.exc import SQLAlchemyError
 import os
 
+DATABASE_URL = os.getenv('DATABASE_URL')
+
 app = Flask(__name__)
 
 # Get the absolute path to the directory of the current file
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Set the path to the SQLite database file
-db_path = os.path.join(basedir, 'user_info.db')
+#DATABASE_URL = "postgresql://postgres.xgvolyyoyrcqlldyleds:Sleep6369246071@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres"
+DATABASE_URL = "postgresql://postgres.axldfiuhvogfdfxtucba:Sleep6369246071@aws-0-us-east-1.pooler.supabase.com:5432/postgres"
 
-# Configure Flask app
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + db_path
+
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 # Initialize SQLAlchemy
 db = SQLAlchemy(app)
 
